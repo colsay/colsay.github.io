@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+:root {
+  --primary-color: #3a4052;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.logo {
+  width: 75px;
+  transition: all 0.4s ease-in-out;
+  margin: 5px 5px;
+}
+
+.logo:hover {
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsing {
+  display: block;
+  justify-content: none;
+}
+
+.collapsing #login {
+  border: none;
+}
+
+.show {
+  display: block;
+  justify-content: none;
+}
+
+.show #login {
+  border: none;
+}
+
+.nav-link {
+  font-size: 18px;
+  margin: 0 3px;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  font-size: 25px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(165, 165, 165);
+}
+
+#login {
+  border-radius: 3px;
+  border: 1px solid white;
+  transition: all 0.5s ease-in-out;
+  margin-right: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.showcase {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--primary-color)
+    url("./https://traversymedia.com/downloads/cover.jpg") no-repeat center
+    center/cover;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-container:after {
+  content: "";
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.content {
+  z-index: 2;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  border: solid #fff 1px;
+  margin-top: 25px;
+  opacity: 0.7;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+  color: #5fb6df;
+}
+
+#portfolio h2 {
+  border-bottom: #313131 1.8px solid;
+}
+
+#portfolio .portfolio-item {
+  right: 0;
+  margin: 10px 0 15px;
+}
+
+@media (min-width: 767px) {
+  #portfolio .portfolio-item {
+    margin: 10px 0 30px;
+  }
+}
+
+#portfolio .portfolio-item .portfolio-link {
+  position: relative;
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  opacity: 0;
+  background: #484f52;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+  opacity: 0.8;
+}
+
+#portfolio
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 20px;
+  margin-top: -12px;
+  text-align: center;
+  color: white;
+}
+
+#portfolio
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content
+  i {
+  margin-top: -12px;
+}
+
+#portfolio
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content
+  h3,
+#portfolio
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content
+  h4 {
+  margin: 0;
+}
+
+#portfolio .portfolio-item .portfolio-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  background-color: rgb(82, 92, 92);
+}
+
+#portfolio .portfolio-item .portfolio-caption h4 {
+  margin: 0;
+  text-transform: none;
+}
+
+#portfolio .portfolio-item .portfolio-caption p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#portfolio * {
+  z-index: auto;
+}
+
+/* contact me */
+.bg-overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.8s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.bg-overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.subscribe-optin {
+  position: relative;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  width: 50%;
+  height: auto;
+  background-image: url(./Assets/maze.jpg);
+  background-size: cover;
+  text-transform: uppercase;
+}
+
+.subscribe-optin h2 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: rgb(196, 196, 196);
+}
+@media (max-width: 768px) {
+  .subscribe-optin h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.optin-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 999;
+  color: rgb(155, 151, 151);
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+
+.optin-close:hover {
+  color: #dfe2e6;
+  transition: color 0.3s ease;
+  transform: scale(1.2);
+}
+
+.contact-me .col-md-6 div {
+  margin: 12px 10px;
+}
+
+.contact-me #message {
+  height: 100%;
+}
+
+/* .contact-me .btn-info {
+  color: #1f1f1f;
+} */
+
+.contact-me input::placeholder,
+.contact-me textarea {
+  font-size: 0.9rem;
+}
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+}
+footer span.copyright {
+  font-size: 15px;
+  line-height: 40px;
+  text-transform: none;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+footer ul.quicklinks {
+  font-size: 90%;
+  line-height: 40px;
+  margin-bottom: 0;
+  text-transform: none;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ul.social-buttons {
+  margin-bottom: 0;
+}
+ul.social-buttons li a {
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: white;
+  border-radius: 100%;
+  outline: none;
+  background-color: #212529;
+}
+ul.social-buttons li a:active,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:hover {
+  background-color: #66b8d8;
+}
